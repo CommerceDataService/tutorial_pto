@@ -1,0 +1,301 @@
+<html>
+<head>
+    <link rel="shortcut icon" href="https://www.commerce.gov/sites/all/themes/doc/doc_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+    <title> Visualizing Innovation </title>
+
+        <link rel="stylesheet" href="css/creative.css" type="text/css">
+        <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/parallax.js"></script>
+
+
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="generator" content="pandoc"/>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+        <link href="data:text/css;charset=utf-8,%0Aimg%2Eleaflet%2Dtile%20%7B%0Apadding%3A%200%3B%0Amargin%3A%200%3B%0Aborder%2Dradius%3A%200%3B%0Aborder%3A%20none%3B%0A%7D%0A%2Einfo%20%7B%0Apadding%3A%206px%208px%3B%0Afont%3A%2014px%2F16px%20Arial%2C%20Helvetica%2C%20sans%2Dserif%3B%0Abackground%3A%20white%3B%0Abackground%3A%20rgba%28255%2C255%2C255%2C0%2E8%29%3B%0Abox%2Dshadow%3A%200%200%2015px%20rgba%280%2C0%2C0%2C0%2E2%29%3B%0Aborder%2Dradius%3A%205px%3B%0A%7D%0A%2Elegend%20%7B%0Aline%2Dheight%3A%2018px%3B%0Acolor%3A%20%23555%3B%0A%7D%0A%2Elegend%20svg%20text%20%7B%0Afill%3A%20%23555%3B%0A%7D%0A%2Elegend%20svg%20line%20%7B%0Astroke%3A%20%23555%3B%0A%7D%0A%2Elegend%20i%20%7B%0Awidth%3A%2018px%3B%0Aheight%3A%2018px%3B%0Afloat%3A%20left%3B%0Amargin%2Dright%3A%208px%3B%0Aopacity%3A%200%2E7%3B%0A%7D%0A" rel="stylesheet" />
+        <style type="text/css">code{white-space: pre;}</style>
+        <link href="data:text/css;charset=utf-8,pre%20%2Eoperator%2C%0Apre%20%2Eparen%20%7B%0Acolor%3A%20rgb%28104%2C%20118%2C%20135%29%0A%7D%0Apre%20%2Eliteral%20%7B%0Acolor%3A%20%23990073%0A%7D%0Apre%20%2Enumber%20%7B%0Acolor%3A%20%23099%3B%0A%7D%0Apre%20%2Ecomment%20%7B%0Acolor%3A%20%23998%3B%0Afont%2Dstyle%3A%20italic%0A%7D%0Apre%20%2Ekeyword%20%7B%0Acolor%3A%20%23900%3B%0Afont%2Dweight%3A%20bold%0A%7D%0Apre%20%2Eidentifier%20%7B%0Acolor%3A%20rgb%280%2C%200%2C%200%29%3B%0A%7D%0Apre%20%2Estring%20%7B%0Acolor%3A%20%23d14%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
+        <style type="text/css">
+          pre:not([class]) {
+            background-color: white;
+          }
+        </style>
+        <script type="text/javascript">
+        if (window.hljs && document.readyState && document.readyState === "complete") {
+           window.setTimeout(function() {
+              hljs.initHighlighting();
+           }, 0);
+        }
+        </script>
+
+        <style>
+            
+        hr {
+            width: 100%;
+            height: 8px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color:purple;
+            color:purple;
+            border: 0 none;
+            }
+          #btn {
+            background: purple;
+            /*background: #d93434;*/
+            background-image: -webkit-linear-gradient(top, purple, #820a0a);
+            background-image: -moz-linear-gradient(top, purple, #820a0a);
+            background-image: -ms-linear-gradient(top, purple, #820a0a);
+            background-image: -o-linear-gradient(top, purple, #820a0a);
+            background-image: linear-gradient(to bottom, purple, #820a0a);
+            -webkit-border-radius: 4;
+            -moz-border-radius: 4;
+            border-radius: 4px;
+            font-family: Arial;
+            color: #ffffff;
+            font-size: 12px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+          }
+
+          #btn:hover {
+            background: #6387cf;
+            background-image: -webkit-linear-gradient(top, #6387cf, #3498db);
+            background-image: -moz-linear-gradient(top, #6387cf, #3498db);
+            background-image: -ms-linear-gradient(top, #6387cf, #3498db);
+            background-image: -o-linear-gradient(top, #6387cf, #3498db);
+            background-image: linear-gradient(to bottom, #6387cf, #3498db);
+            text-decoration: none;
+          }
+
+          .main-container {
+            max-width: 940px;
+            margin-left: auto;
+            margin-right: auto;
+          }
+          code {
+            color: inherit;
+            background-color: rgba(0, 0, 0, 0.04);
+          }
+          img {
+            max-width:100%;
+            height: auto;
+          }
+          #woot{
+            background-color: white;
+            opacity: 0.9;
+            color:purple;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: Helvetica;
+          }
+          #weight{
+            font-weight: bold;
+          }
+            .main-container {
+              max-width: 940px;
+              margin-left: auto;
+              margin-right: auto;
+            }
+            code {
+              color: inherit;
+              background-color: rgba(0, 0, 0, 0.04);
+            }
+            img {
+              max-width:100%;
+              height: auto;
+            }
+        </style>
+    </head>
+
+<body>
+
+
+<!--NavBar-->
+     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#top">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#story">Visuals</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#code">Code</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+<!--Cover-->
+
+    <section class="scroll backie datacorps " id="top">
+        <div class="header-content">
+            <div class="header-content-inner" >
+                <h2 style="position:absolute;left:15%; top:50%;text-align:left;">
+                    <div id="woot">
+                        <span style="font-size:150%;line-height:1.3;" >
+                          <strong>exploring <br> the landscape of <br>american innovation</strong><br></span>
+
+                          <a id = "btn" href="https://github.com/CommerceDataService/tutorial_pto/zipball/master"> <strong>ZIP File</strong></a>
+                          <a id = "btn" href="https://github.com/CommerceDataService/tutorial_pto/tarball/master"> <strong>TAR Ball</strong></a>
+                          <a id = "btn" href="https://github.com/CommerceDataService/tutorial_pto"><strong>GitHub</strong></a>
+
+                          <p><br>Use Python, Beautiful Soup, and Tableau <br> to visualize USPTO data</p>
+                      </div>
+                </h2>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <body>
+
+
+
+<!--header-->
+<div id='story' class="container-fluid main-container" style="background-color:white;">
+    <br>
+    <div class='container'>
+    <br><br>
+        <div class="row">
+            <div class="col-lg-2"style="font-family:Helvetica;text-align:left;background-color:white; border-style: solid;
+                border-color:lightgrey;border-radius:5px;border-width: 2px;">
+                <p><span style="font-size:120%;color:purple;">Credits</span>
+                    <small><br><strong>United States Patent and Trademark Office</strong>
+                    <ul>
+                        <li>Scott Beliveau</li>
+                        <li>Tom Beach</li>
+                    </ul>
+                    <strong>Edited by the Commerce Data Service</strong><br>
+                    <ul>
+                        <li>Star Ying</li>
+                    </ul>
+                    </small>
+                </p>
+            </div>
+            <div class="col-lg-7">
+                <p style="font-family:Helvetica;"><span style="font-size:150%;color:lightgrey;">
+                    <strong>Foreword:</strong>
+                </span>
+                <span style='color:lightgrey'>
+                <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <br>
+                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+                </p>
+                </span>
+<!--                 <p style="font-family:Helvetica;"><span style="font-size:150%;color:purple;"><strong>What does innovation look like in a given state?</strong></span>
+                    <br> Once you've lived in a state for a few years, you may already have some sense of what the innovation in that state looks like. For California, it's technology. For Alaska, you might (correctly) guess it has to do with drilling on the North Slope. But if you live in a state that isn't so dominated by a major corporation or industry, it might be much less obvious what kind of innovation is happening around you. Among the data the <a href='http://www.uspto.gov/'>United States Patent and Trademark Office (USPTO)</a> provides, the <a href='http://www.uspto.gov/learning-and-resources/electronic-data-products/patent-technology-monitoring-team-ptmt-patent'>Patent Trademark Monitoring Team (PTMT)</a> produces aggregations of the underlying patent data, along many different dimensions and partitions. These aggregations answer all kinds of questions just like this, as well as offer opportunities for deeper analysis using data visualizations.
+                </p> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid main-container">
+        <p style="font-family:Helvetica;">
+            <p style="font-family:Helvetica;"><span style="font-size:150%;color:purple;"><strong>What does innovation look like in a given state?</strong></span>
+            <br> Once you've lived in a state for a few years, you may already have some sense of what the innovation in that state looks like. For California, it's technology. For Alaska, you might (correctly) guess it has to do with drilling on the North Slope. But if you live in a state that isn't so dominated by a major corporation or industry, it might be much less obvious what kind of innovation is happening around you. Among the data the <a href='http://www.uspto.gov/'>United States Patent and Trademark Office (USPTO)</a> provides, the <a href='http://www.uspto.gov/learning-and-resources/electronic-data-products/patent-technology-monitoring-team-ptmt-patent'>Patent Trademark Monitoring Team (PTMT)</a> produces aggregations of the underlying patent data, along many different dimensions and partitions. These aggregations answer all kinds of questions just like this, as well as offer opportunities for deeper analysis using data visualizations.
+            </p>
+            <br><span style="font-size:150%;color:purple;">Technology classes by state</span><br>
+            This visualization serves as a detail view of the technology classes that make up a state's utility patents. The treemap above organizes all of a state's technology classes for a given timeframe, with a rectangle's size representing its share of the patent total, and the line graph below depicts the per year values for a given technology class if a rectangle is hovered over, and all classes for the state otherwise. We can pick which state we're looking at using the dropdownbox on the right. 
+            <br>
+            Let’s take a look at Idaho. As some background, Idaho is a big patent producer, driven primarily by Micron Technology, Inc. So, we see that Idaho's largest technology classes by far are 'Semiconductor Device Manufacturing: Process' (technology class 438, with 21.99% of the total patent share from 1995-2014) and 'Active Solid-State Devices (e.g., Transistors, Solid-State Diodes)' (technology class 257, with 13.95% from 1995-2014). Unsurprisingly, given that the large share of Idaho's patent production is through Micron (a technology company), the largest technology classes involve computers. Vermont has a similar breakdown of technology classes, by way of IBM.
+
+            <br><br>
+        </p>
+    </div>
+</div>
+
+<div style="background-color:purple;">
+    <div class="container-fluid main-container">
+        <script type='text/javascript' src='http://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 869px;'><noscript><a href='#'><img alt='main ' src='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;state-tech-class-treemap&#47;main&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='869' style='display:none;'><param name='host_url' value='http%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='state-tech-class-treemap&#47;main' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;state-tech-class-treemap&#47;main&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
+    </div>
+</div>
+
+<div class="container-fluid main-container" style="background-color:white;">
+        <p style="font-family:Helvetica;">
+            <br><span style="font-size:150%;color:purple;">Case example: Idaho</span><br>
+            Let’s take a look at Idaho. As some background, Idaho is a big patent producer, driven primarily by Micron Technology, Inc. So, we see that Idaho's largest technology classes by far are:
+            <ul>
+                <li>'Semiconductor Device Manufacturing: Process' (technology class 438, with 21.99% of the total patent share from 1995-2014),</li>
+                <li>'Active Solid-State Devices (e.g., Transistors, Solid-State Diodes)' (technology class 257, with 13.95% from 1995-2014)</li>
+                <li>'Static Information Storage and Retrieval' (technology class 365, with 9.99% from 1995-2014</li>
+            </ul>
+            Unsurprisingly, given that the large share of Idaho's patent production is through a single company, Micron, the largest technology classes involve computers. Vermont has a similar breakdown of technology classes due to IBM.
+            <br>
+            Other states are similarly dominated by a particular technology class (or kind of technology classes). Michigan's largest technology class since 2008, for example, is 'DP: Vehicles, Navigation, and Relative Location (Data Processing)' (technology class 701). Given Michigan's traditional status as the locus of the USA's auto-making industry, looking at the last 20 years (1995-2014), we can see that the second largest technology class is technically Internal-Combustion Engines (technology class 123), but this class stays relatively constant year-over-year, while technology class 701 increases significantly, starting in 2008, corresponding with the automotive industry bailout. This may point to a new, deliberate R&D focus in the industry following the injection of funds. Gas prices drove many consumers to purchase more fuel-efficient vehicles, such as Japanese-made models. Perhaps the US automotive industry decided to differentiate their competitive offerings using services based on GPS, rather than trying to play catch-up with fuel efficiency.
+            <br>
+            These detail views not only give us a good sense of what industry in a particular state looks like (Oklahoma's largest technology class, for example, is 'Wells (shafts or deep borings in the earth, e.g., for oil and gas)'), but can also help us understand trends within an industry if that industry is very specifically associated with a particular state. The automotive industry in Michigan is perhaps the clearest example, but perhaps we could do a similar (though necessarily more subtle) analysis of Silicon Valley. California is not dominated by a single technology class, but many of their top technology classes are computer-oriented. Which technology classes are rising, and which are falling?
+        </p>
+</div>
+
+<div style="background-color:purple;">
+    <div class="container-fluid main-container">
+        <script type='text/javascript' src='http://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 80%; height: 80%;'><noscript><a href='#'><img alt=' ' src='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NA&#47;NAICSIndustryClassificationsbyCountryState2visuals&#47;NAICSClassificationbyCountryView&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='100%' height='100%' style='display:none;'><param name='host_url' value='http%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='NAICSIndustryClassificationsbyCountryState2visuals&#47;NAICSClassificationbyCountryView' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NA&#47;NAICSIndustryClassificationsbyCountryState2visuals&#47;NAICSClassificationbyCountryView&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>    </div>
+</div>
+
+<div class="container-fluid main-container" >
+<!-- <p><a href="./nvd_network.html">Open in separate window</a></p> -->
+<br>
+    <p style="font-family:Helvetica;"><span style="font-size:150%;color:purple;">Conclusion</span>
+        <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    </p>
+</div>     
+
+</div>
+
+
+
+<!--Do more-->
+<div id='code' style="color:black;font-family:Helvetica;" >
+    <div class="container-fluid main-container">
+    <p style="font-family:Helvetica"><span style="font-size:200%;color:purple;"><br><strong>Getting Started</strong></span>
+        <br>In this tutorial, we'll go over how to collate the required data from the PTMT web site using Python web scraping, then walk through creating the visualization in Tableau Public.
+        <br>
+        Follow along in the iPython Notebook below or check out the code files at the Github repo (<a href="https://github.com/CommerceDataService/tutorial_pto">https://github.com/CommerceDataService/tutorial_pto</a>). 
+        <br><br>
+        <a href="./tutorial_pto.ipynb">Jupyter Notebook Version</a>
+    </p>
+    </div>
+</div>
+
+<div>
+<iframe src="tutorial_pto.html" marginwidth="0" frameborder = "0"  marginheight="0" scrolling="no" width="100%" height="100%" onload="resizeIframe(this)"></iframe>
+</div>
+
+<script language="javascript" type="text/javascript">
+  function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+</script>
+
+
+</body>
+</html>

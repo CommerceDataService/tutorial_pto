@@ -1,0 +1,6 @@
+*.xml
+*.json
+*.zip
+*.sublime-project
+*.sublime-workspace
+.ipynb*/
