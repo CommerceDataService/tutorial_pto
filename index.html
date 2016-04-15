@@ -1,297 +1,443 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="shortcut icon" href="https://www.commerce.gov/sites/all/themes/doc/doc_theme/favicon.ico" type="image/vnd.microsoft.icon" />
-    <title> Visualizing Innovation </title>
+    <title>Visualizing Innovation</title>
 
-        <link rel="stylesheet" href="css/creative.css" type="text/css">
-        <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/parallax.js"></script><!-- Parallax Banner -->
+    <script src="js/navbar.hide.js"></script><!-- Hide Navbar -->
+    <script src="js/scroll.js"></script><!-- Affix Sidebar/Scroll Functions -->
 
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="js/parallax.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Coda:400,800' rel='stylesheet' type='text/css'><!-- Google Font for Title -->
+    <link rel="stylesheet" type="text/css" href="css/cdup_tutorial.css"><!-- Custom Theme for know.data tutorial -->
 
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="generator" content="pandoc"/>
+    <!-- Syntax Highlighting -->
+    <!-- Support for the following languages: -->
+    <!-- Apache, Bash, C#, C++, CSS, CoffeeScript, Device Tree, Diff, HTML, XML, HTTP, Ini, JSON, Java, JavaScript, Makefile, Markdown, Nginx, Objective-C, PHP, Perl, Python, Ruby, SQL, Fortran, Julia, Lisp, Lua, Mathematica, Matlab, Python-Profile, R, Scilab, Scala, Stata, Swift -->
+    <link rel="stylesheet" type="text/css" href="css/styles/github.css"><!-- Style for highlighting Code: Default to Github -->
+    <script src="js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script><!-- Activate Code Highlighting -->
 
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
-        <link href="data:text/css;charset=utf-8,%0Aimg%2Eleaflet%2Dtile%20%7B%0Apadding%3A%200%3B%0Amargin%3A%200%3B%0Aborder%2Dradius%3A%200%3B%0Aborder%3A%20none%3B%0A%7D%0A%2Einfo%20%7B%0Apadding%3A%206px%208px%3B%0Afont%3A%2014px%2F16px%20Arial%2C%20Helvetica%2C%20sans%2Dserif%3B%0Abackground%3A%20white%3B%0Abackground%3A%20rgba%28255%2C255%2C255%2C0%2E8%29%3B%0Abox%2Dshadow%3A%200%200%2015px%20rgba%280%2C0%2C0%2C0%2E2%29%3B%0Aborder%2Dradius%3A%205px%3B%0A%7D%0A%2Elegend%20%7B%0Aline%2Dheight%3A%2018px%3B%0Acolor%3A%20%23555%3B%0A%7D%0A%2Elegend%20svg%20text%20%7B%0Afill%3A%20%23555%3B%0A%7D%0A%2Elegend%20svg%20line%20%7B%0Astroke%3A%20%23555%3B%0A%7D%0A%2Elegend%20i%20%7B%0Awidth%3A%2018px%3B%0Aheight%3A%2018px%3B%0Afloat%3A%20left%3B%0Amargin%2Dright%3A%208px%3B%0Aopacity%3A%200%2E7%3B%0A%7D%0A" rel="stylesheet" />
-        <style type="text/css">code{white-space: pre;}</style>
-        <link href="data:text/css;charset=utf-8,pre%20%2Eoperator%2C%0Apre%20%2Eparen%20%7B%0Acolor%3A%20rgb%28104%2C%20118%2C%20135%29%0A%7D%0Apre%20%2Eliteral%20%7B%0Acolor%3A%20%23990073%0A%7D%0Apre%20%2Enumber%20%7B%0Acolor%3A%20%23099%3B%0A%7D%0Apre%20%2Ecomment%20%7B%0Acolor%3A%20%23998%3B%0Afont%2Dstyle%3A%20italic%0A%7D%0Apre%20%2Ekeyword%20%7B%0Acolor%3A%20%23900%3B%0Afont%2Dweight%3A%20bold%0A%7D%0Apre%20%2Eidentifier%20%7B%0Acolor%3A%20rgb%280%2C%200%2C%200%29%3B%0A%7D%0Apre%20%2Estring%20%7B%0Acolor%3A%20%23d14%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
-        <style type="text/css">
-          pre:not([class]) {
-            background-color: white;
-          }
-        </style>
-        <script type="text/javascript">
-        if (window.hljs && document.readyState && document.readyState === "complete") {
-           window.setTimeout(function() {
-              hljs.initHighlighting();
-           }, 0);
-        }
-        </script>
-
-        <script type="text/javascript">
-            window.addEventListener("hashchange", function() { scrollBy(0, -50) })
-        </script>
-
-        <style>
-            
-        hr {
-            width: 100%;
-            height: 8px;
-            margin-left: auto;
-            margin-right: auto;
-            background-color:#004C97;
-            color:#004C97;
-            border: 0 none;
-            }
-          #btn {
-            background: #004C97;
-            /*background: #d93434;*/
-            background-image: -webkit-linear-gradient(top, #004C97, #820a0a);
-            background-image: -moz-linear-gradient(top, #004C97, #820a0a);
-            background-image: -ms-linear-gradient(top, #004C97, #820a0a);
-            background-image: -o-linear-gradient(top, #004C97, #820a0a);
-            background-image: linear-gradient(to bottom, #004C97, #820a0a);
-            -webkit-border-radius: 4;
-            -moz-border-radius: 4;
-            border-radius: 4px;
-            font-family: Arial;
-            color: #ffffff;
-            font-size: 12px;
-            padding: 10px 20px 10px 20px;
-            text-decoration: none;
-          }
-
-          #btn:hover {
-            background: #6387cf;
-            background-image: -webkit-linear-gradient(top, #6387cf, #3498db);
-            background-image: -moz-linear-gradient(top, #6387cf, #3498db);
-            background-image: -ms-linear-gradient(top, #6387cf, #3498db);
-            background-image: -o-linear-gradient(top, #6387cf, #3498db);
-            background-image: linear-gradient(to bottom, #6387cf, #3498db);
-            text-decoration: none;
-          }
-
-          .main-container {
-            max-width: 940px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-          code {
-            color: inherit;
-            background-color: rgba(0, 0, 0, 0.04);
-          }
-          img {
-            max-width:100%;
-            height: auto;
-          }
-          #woot{
-            background-color: white;
-            opacity: 0.9;
-            color:#004C97;
-            padding: 10px;
-            border-radius: 10px;
-            font-family: Helvetica;
-          }
-          #weight{
-            font-weight: bold;
-          }
-            .main-container {
-              max-width: 940px;
-              margin-left: auto;
-              margin-right: auto;
-            }
-            code {
-              color: inherit;
-              background-color: rgba(0, 0, 0, 0.04);
-            }
-            img {
-              max-width:100%;
-              height: auto;
-            }
-            .centered{
-                margin: 0 auto;
-            }
-        </style>
-    </head>
-
+</head>
 <body>
-
-
-<!--NavBar-->
-     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <nav id='navbar' class="nav navbar-default navbar-fixed-top navbar-border"><!-- Navbar -->
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-links" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"></a>
-            </div>
+                <a class="navbar-brand navbar-color" href="https://commerce.gov/datausability"><strong>Data Usability</strong></a>
+            </div> <!-- navbar-header -->
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#top">Home</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#story">Visuals</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#code">Code</a>
-                    </li>
-
+            <div class="collapse navbar-collapse" id="collapse-links">
+                <ul class="nav navbar-nav navbar-color">
+                    <li class="disclaimer"><a href="https://commerce.gov/datausability">a project by Commerce Data Service</a></li>
                 </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
+                <ul class="nav navbar-nav navbar-right navbar-color">
+                    <li><a href="https://www.commerce.gov/datausability/">Index</a></li>
+                    <li><a href="http://www.uspto.gov/">USPTO</a></li>
+                </ul>
+            </div><!-- navbar-collapse -->
+        </div><!-- container-fluid -->
     </nav>
 
-<!--Cover-->
-
-    <section class="scroll backie datacorps " id="top">
-        <div class="header-content">
-            <div class="header-content-inner" >
-                <h2 style="position:absolute;left:15%; top:50%;text-align:left;">
-                    <div id="woot">
-                        <span style="font-size:150%;line-height:1.3;" >
-                          <strong>exploring <br> the landscape of <br>american innovation</strong><br></span>
-
-                          <a id = "btn" href="https://github.com/CommerceDataService/tutorial_pto/zipball/master"> <strong>ZIP File</strong></a>
-                          <a id = "btn" href="https://github.com/CommerceDataService/tutorial_pto/tarball/master"> <strong>TAR Ball</strong></a>
-                          <a id = "btn" href="https://github.com/CommerceDataService/tutorial_pto"><strong>GitHub</strong></a>
-
-                          <p><br>Use Python, Beautiful Soup, and Tableau <br> to visualize USPTO data</p>
-                      </div>
-                </h2>
+    <!-- Banner -->
+    <section class="scroll">
+        <div class="scroll-overlay ">
+            <div class="title headtext">
+                <h1><span class="title-line" style="font-size:150%;">EXPLORING THE LANDSCAPE OF AMERICAN INNOVATION</span></h1>
+                <h5><span class="title-line">by CHRISTOPHER BERMAN, USPTO</span></h5>
+                <h5><span class="title-line">edited by STAR YING, COMMERCE DATA SERVICE</span></h5>
+                <h5><span class="title-line">APRIL 2016</span></h5>
             </div>
         </div>
-
     </section>
 
-
-
-
-    <body>
-
-
-
-<!--header-->
-<div id='story' class="container-fluid main-container" style="background-color:white;">
-    <br>
-    <div class='container'>
-    <br><br>
-        <div class="row">
-            <div class="col-lg-2"style="font-family:Helvetica;text-align:left;background-color:white; border-style: solid;
-                border-color:lightgrey;border-radius:5px;border-width: 2px;">
-                <p><span style="font-size:120%;color:#004C97;">Credits</span>
-                    <small><br><strong>United States Patent and Trademark Office</strong>
-                    <ul>
-                        <li>Christopher Berman</li>
-                    </ul>
-                    <strong>Edited by the Commerce Data Service</strong><br>
-                    <ul>
-                        <li>Star Ying</li>
-                    </ul>
-                    </small>
-                </p>
+    <!-- Body -->
+    
+    <section>
+        <div class="container-fluid content">
+            <div class="row">
+                
+                    
+                <div id='' class="hidden-xs hidden-sm col-lg-4 col-md-4">
+                    <a href="https://commerce.gov/dataservice"><img class="footlogo" width="160px"src="img/CDS-horizontal-v2.jpg"/></a>
+                    <a href="http://www.uspto.gov/"><img class="footlogo" width="160px"src="img/logo.jpg"/></a>
+                    
+                </div>
+                <div id='content' class="col-lg-6 col-md-6">
+                    <em>As part of the <a href="https://www.commerce.gov/datausability/">Commerce Data Usability Project</a>, United States Patent and Trade Office (USPTO) in collaboration with the <a href="https://www.commerce.gov/dataservice/">Commerce Data Service</a> has created a tutorial that introduces Tableau as a way to explore USPTO data.  If you have question, feel free to reach out to the Commerce Data Service at <a href="mailto:DataUsability@doc.gov">DataUsability@doc.gov</a>.</em>
+                </div>
             </div>
-            <div class="col-lg-7">
-                <p style="font-family:Helvetica;"><span style="font-size:150%;color:lightgrey;">
-                    <strong>Foreword:</strong>
-                </span>
-                <span style='color:lightgrey'>
-                <br>The first patent in the United States was issued on July 31, 1790 to one Samuel Hopkins for an improvement in the making of pot ash, and was signed by President George Washington. That makes 225 years of innovators using the patent system to protect their ideas, from Samuel Morse's <a href='http://www.google.com/patents/US1647'>invention of Morse Code</a> in 1840 through Arthur L. Shawlow and Charles H. Townes' <a href='http://www.google.com/patents/US2929922'>invention of the laser</a> in 1960, and Linus Yale's <a href='http://www.google.com/patents/US31278'>invention of the modern pin-tumbler lock</a> in 1861 through John Bardeen and Walter H. Brattain's <a href='http://www.google.com/patents/US2524035'>invention of the transistor</a> in 1950. The years upon years of data relating to these innovations, as well as millions more, are all made publicly available by the USPTO. Some innovators choose not to protect their innovations with patents, perhaps choosing to maintain it as a trade secret or choosing not to protect it at all, but many do, and the resulting data is a fertile ground for analysis. 
-                </p>
-            </div>
-        </div>
+            <hr>
+            
+            <br>
+            
+            <div class="row">
+                <div id='content' class="col-lg-10 col-md-10"><!-- Content -->
+
+                <section id='intro'>
+                    <h2 class="sectionhead">foreword</h2>
+                    <p>The first patent in the United States was issued on July 31, 1790 to one Samuel Hopkins for an improvement in the making of pot ash, and was signed by President George Washington. That makes 225 years of innovators using the patent system to protect their ideas, from Samuel Morse's <a href='http://www.google.com/patents/US1647'>invention of Morse Code</a> in 1840 through Arthur L. Shawlow and Charles H. Townes' <a href='http://www.google.com/patents/US2929922'>invention of the laser</a> in 1960, and Linus Yale's <a href='http://www.google.com/patents/US31278'>invention of the modern pin-tumbler lock</a> in 1861 through John Bardeen and Walter H. Brattain's <a href='http://www.google.com/patents/US2524035'>invention of the transistor</a> in 1950. The years upon years of data relating to these innovations, as well as millions more, are all made publicly available by the USPTO. Some innovators choose not to protect their innovations with patents, perhaps choosing to maintain it as a trade secret or choosing not to protect it at all, but many do, and the resulting data is a fertile ground for analysis.</p>  
+
+                    <h2 class="subsection">what does innovation look like in a given state?</h2>
+                    <p>Once you've lived in a state for a few years, you may already have some sense of what the innovation in that state looks like. For California, it's technology. For Alaska, you might (correctly) guess it has to do with drilling on the North Slope. But if you live in a state that isn't so dominated by a major corporation or industry, it might be much less obvious what kind of innovation is happening around you. Among the data the <a href='http://www.uspto.gov/'>United States Patent and Trademark Office (USPTO)</a> provides, the <a href='http://www.uspto.gov/learning-and-resources/electronic-data-products/patent-technology-monitoring-team-ptmt-patent'>Patent Trademark Monitoring Team (PTMT)</a> produces aggregations of the underlying patent data, along many different dimensions and partitions. These aggregations answer all kinds of questions just like this, as well as offering a convenient input for data visualizations.</p>
+                </section>
+
+                <section id="state">
+                    <h2 class="sectionhead">technology classes by state</h2>
+                    <p>The visualization below serves as a detail view of the technology classes that make up a state's utility patents. The treemap organizes all of a state's technology classes for a given timeframe, with a rectangle's size representing its share of the patent total, while the line graph depicts the per year values for a given technology class if a rectangle is hovered over, and all classes for the state otherwise. We can pick which state we're looking at by using the dropdownbox on the right.</p>
+
+                    <div class="container-fluid main-container">
+                        <script type='text/javascript' src='http://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 869px;'><noscript><a href='#'><img alt='main ' src='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;state-tech-class-treemap&#47;main&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='869' style='display:none;'><param name='host_url' value='http%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='state-tech-class-treemap&#47;main' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;state-tech-class-treemap&#47;main&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
+                    </div>
+                </section>
+               
+                <section id='case'>
+                    <h2 class="sectionhead">Case example: Idaho</h2>
+                    <p>Let's take a look at Idaho. As some background, Idaho is a big patent producer, driven primarily by Micron Technology, Inc. So, we see that Idaho's largest technology classes for 1995 - 2014 are:
+                        <ul>
+                            <li>'Semiconductor Device Manufacturing: Process' (with 21.99%),</li>
+                            <li>'Active Solid-State Devices (e.g., Transistors, Solid-State Diodes)' (with 13.95%)</li>
+                            <li>'Static Information Storage and Retrieval' (with 9.99%)</li>
+                        </ul>
+                    </p>
+
+                    <p>Unsurprisingly, given that the large share of Idaho's patent production is through Micron (a technology company), the largest technology classes involve computers. Vermont has a similar breakdown of technology classes, by way of IBM.</p>
+
+                    <p>Other states are similarly dominated by a particular technology class (or kind of technology classes). Michigan's largest technology class since 2008, for example, is 'DP: Vehicles, Navigation, and Relative Location (Data Processing)' (technology class 701). Given Michigan's traditional status as the locus of the USA's auto-making industry, looking at the last 20 years (1995-2014), we can see that the second largest technology class is technically Internal-Combustion Engines (technology class 123), but this class stays relatively constant year-over-year, while technology class 701 increases significantly, starting in 2008, corresponding with the automotive industry bailout. This may point to a new, deliberate R&D focus in the industry following the injection of funds. Gas prices drove many consumers to purchase more fuel-efficient vehicles, such as Japanese-made models. Perhaps the US automotive industry decided to differentiate their competitive offerings using services based on GPS, rather than trying to play catch-up with fuel efficiency.</p>
+
+                    <p>These detail views not only give us a good sense of what industry in a particular state looks like (Oklahoma's largest technology class, for example, is 'Wells (shafts or deep borings in the earth, e.g., for oil and gas)'), but can also help us understand trends within an industry if that industry is very specifically associated with a particular state. The automotive industry in Michigan is one of the clearest examples, but perhaps we could do a similar (though necessarily more subtle) analysis of Silicon Valley. California is not dominated by a single technology class, but many of their top technology classes are computer-oriented. Which technology classes are rising, and which are falling?</p>
+
+                    <div class="container-fluid main-container"><script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 982px; height: 742px;'><noscript><a href='#'><img alt='bar ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ex&#47;ExploratoryViz&#47;bar&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='982' height='742' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='ExploratoryViz&#47;bar' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ex&#47;ExploratoryViz&#47;bar&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
+                    </div>
+                </section>
+
+                <section id="analysis">
+                    <h2 class="sectionhead">On the fly analysis</h2>
+                    <p>Designing data visualizations can sometimes be rather easy. If you're answering a specific question about inherently important data (such as sales and profit figures for a company you work for), any functional visualization of that data will be more or less successful. You can plan out the visualization from the beginning and develop by that blueprint. If you're instead digging into data to discover patterns or trends, you won't really know what the pattern looks like until you find it, and any upfront design may be a waste of time. With drag-and-drop tools, Tableau makes developing visualizations quick and easy. In this way, you can use Tableau as a tool for exploring your data dynamically, restructuring bar graphs into line graphs and bringing in new data points in a single mouse stroke. The above visualization, which leverages the exact same data from the prior state details visualization, was created in a few leisurely minutes.</p>
+
+                    <p>This simple vis offers a detail view for a given technology class instead of a given state, offering us a comparative view of states by USPC class. We can now see, for example, that California consistently dominates the Locks USPC class (070) across all time ranges, whereas Illinois and New York are the top historical contributors to Printing (101), though California catches up for the range 2005-2014. What does the history of innovation in printing look like? Why is Illinois so significant, and why is California so dominant today? Why is New Hampshire a strong second over the last ten years, when it barely featured from 1963-1972? These kinds of questions lead to discovery. If we can identify the right way to peer into our data, and the right variables to make configurable, we can use Tableau as an elegant query system that shows these changes quickly and clearly, and lets us focus on the Why behind the What.</p>     
+                </section>
+
+                <section id="conclusion">
+                    <h2 class="sectionhead">conclusion</h2>
+                    <p>We've shown here two visualization possibilities for a single set of data. Not only are there many more possibilities for this data set (such as a focused view on a specific technology class or state), but many more aggregations available at the PTMT data site, and that many more possibilities for joining USPTO data to other data sources. We could use Census population estimates by year to calculate patents per capita. We could pull in yearly state GDP data and see how it correlates with patent totals. We could observe the patent totals for a given corporation against its economic measures (such as revenue or earnings per share). To lightly spin the old cliché, the possibilities are infinite, and Python, Beautiful Soup and Tableau make the creation process painless.</p>
+                </section> 
+
+                <section id="start">
+                    <h2 class="sectionhead">Getting Started</h2>
+                    <p>In this tutorial, we'll go over how to collate the required data from the PTMT web site using Python web scraping, then walk through creating the visualization in Tableau Public. Follow along in the Jupyter Notebook below or check out the code files at <a href="https://github.com/CommerceDataService/tutorial_pto">Github</a>.</p>
+
+                    <h2 class="sectionhead">Scraping USPTO tables</h2>
+                    <p>The data for this visualization lives in 51 different HTML tables (50 states + Washington DC), each on a separate page. We could copy and paste each table into an Excel or LibreOffice spreadsheet, unpivot the tables and export to a CSV format, but that doesn't scale well, and worse, it's boring. Let's write a script!</p> 
+
+                    <h2 class="subsection">Importing necessary packages</h2>
+                    <p>We first import the necessary packages. For this script we use the collections, csv, requests, and Beautiful Soup to:</p>
+                    <ul>
+                        <li>Access the url where the different tables are stored,</li>
+                        <li>Parse and scrape the resulting page,</li>
+                        <li>Create a named tuple,</li>
+                        <li>Write to a CSV file</li>
+                    </ul>
+
+<pre><code>from collections import namedtuple
+import csv
+import requests
+from bs4 import BeautifulSoup</code></pre>
+
+                    <h2 class="subsection">Declaring initial variables</h2>
+                    <p>We now declare the variables that will be needed when we scrape USPTO.</p>
+                    <ol>
+                        <li>A dictionary with the full state name to state abbreviation key-value pair,</li>
+                        <li>the prefix and suffix url to the HTML tables,</li>
+                        <li>the empty list to store scraped values,</li>
+                        <li>and the named tuple function to pull the values from the scraped HTML.</li>
+                    </ol>
+
+<pre><code># US state codes; add territory codes here if desired
+REGION_CODES = {
+    'Alabama' : 'AL',
+    'Alaska' : 'AK',
+    'Arizona' : 'AZ',
+    'Arkansas' : 'AR',
+    'California' : 'CA',
+    'Colorado' : 'CO',
+    'Connecticut' : 'CT',
+    'Delaware' : 'DE',
+    'District of Columbia' : 'DC',
+    'Florida' : 'FL',
+    'Georgia' : 'GA',
+    'Hawaii' : 'HI',
+    'Idaho' : 'ID',
+    'Illinois' : 'IL',
+    'Indiana' : 'IN',
+    'Iowa' : 'IA',
+    'Kansas' : 'KS',
+    'Kentucky' : 'KY',
+    'Louisiana' : 'LA',
+    'Maine' : 'ME',
+    'Maryland' : 'MD',
+    'Massachusetts' : 'MA',
+    'Michigan' : 'MI',
+    'Minnesota' : 'MN',
+    'Mississippi' : 'MS',
+    'Missouri' : 'MO',
+    'Montana' : 'MT',
+    'Nebraska' : 'NE',
+    'Nevada' : 'NV',
+    'New Hampshire' : 'NH',
+    'New Jersey' : 'NJ',
+    'New Mexico' : 'NM',
+    'New York' : 'NY',
+    'North Carolina' : 'NC',
+    'North Dakota' : 'ND',
+    'Ohio' : 'OH',
+    'Oklahoma' : 'OK',
+    'Oregon' : 'OR',
+    'Pennsylvania' : 'PA',
+    'Rhode Island' : 'RI',
+    'South Carolina' : 'SC',
+    'South Dakota' : 'SD',
+    'Tennessee' : 'TN',
+    'Texas' : 'TX',
+    'Utah' : 'UT',
+    'Vermont' : 'VT',
+    'Virginia' : 'VA',
+    'Washington' : 'WA',
+    'West Virginia' : 'WV',
+    'Wisconsin' : 'WI',
+    'Wyoming' : 'WY'
+}
+
+BASE_URL_PREFIX = 'http://www.uspto.gov/web/offices/ac/ido/oeip/taf/stcteca/'
+BASE_URL_SUFFIX = 'stcl_gd.htm'
+
+MASTER_LIST = []
+StateRow = namedtuple('StateRow', 'state_name tech_code year value')</code></pre>
+
+                    <h2 class="subsection">Scraping each state</h2>
+                    <p>We now can loop through each state abbreviation and build the actual url for each table. We then pass that url path to requests and parse through Beautiful Soup. From that parsed result, we search for a HTML table tag and pull values using our named tuple function. We store that result in our final MASTER_LIST.</p>
+
+<pre><code># for each state code, generate the target URL and pull the data
+for state in sorted(REGION_CODES):
+    print('Processing data for ' + state)
+    path = BASE_URL_PREFIX + REGION_CODES[state].lower() + BASE_URL_SUFFIX
+    r = requests.get(path)
+    soup = BeautifulSoup(r.text, "html.parser")
+
+    # skip first and last rows, which are headers and totals respectively
+    for table_row in soup.find_all('tr')[1:-1]:
+        tech_code = table_row.find('td', style=' text-align: left; ').string.strip()
+        year = 1963
+        # skip the last element, which is a total; we can aggregate the data ourselves
+        for value in table_row.find_all('td', {'style': None})[:-1]:
+            row = StateRow(state, tech_code, year, value.string.strip())
+            MASTER_LIST.append(row)
+            year = year + 1</code></pre>
+
+                    <h2 class="sectionhead">Scraping Tech Codes and Names</h2>
+                    <p>We now have to scrape the associated classifications with their code values from the USPTO site.</p>
+
+                    <h2 class="subsection">Declaring initial variables</h2>
+                    <p>We declare the following prior to scraping the site:</p>
+                    <ul>
+                        <li>URL to the Tech code table,</li>
+                        <li>final list to store the data,</li>
+                        <li>and named tuple function to pull the necessary data.</li>
+                    </ul>
+
+<pre><code>URL = 'http://www.uspto.gov/web/patents/classification/selectnumwithtitle.htm'
+TECH_CODES = []
+ClassRow = namedtuple('ClassRow', 'class_code class_name')</code></pre>
+
+                    <h2 class="subsection">Scraping Tech Code Table</h2>
+                    <p>We pass the URL we defined to requests and parse through Beautiful Soup. We now loop through HTML table tags and pull values based on our named tuple function.</p>
+
+<pre><code>REQUEST = requests.get(URL)
+SOUP = BeautifulSoup(REQUEST.text, "html.parser")
+
+print('Scraping data')
+for table_row in SOUP.find_all('tr'):
+    class_code_tag = table_row.find('td', width='27')
+
+    # not a class_code + name row. skip
+    if class_code_tag is None:
+        continue
+
+    class_code = class_code_tag.string
+    class_name = table_row.find('td', width='532').string
+    TECH_CODES.append(ClassRow(class_code, class_name))</code></pre>
+
+                    <h2 class="subsection">Exporting to CSV</h2>
+                    <p>We open the file, state_tech.csv and tech_code.csv, for writing and:</p>
+                    <ol>
+                        <li>output the column names for the CSV as the first row,</li>
+                        <li>and write each iteration of our final list as another row.</li>
+                    </ol>
+
+<pre><code># write out to csv
+with open('./state_tech.csv', 'w', newline='') as out:
+    print('Writing data to ' + out.name)
+    CSV_FILE = csv.writer(out, delimiter=',')
+    CSV_FILE.writerow(['Region', 'Tech Class Code', 'Year', 'Utility Patent Count'])
+    CSV_FILE.writerows(MASTER_LIST)
+    
+with open('./tech_code.csv', 'w', newline='') as out:
+    print('Writing data to ' + out.name)
+    CSV_FILE = csv.writer(out, delimiter=',')
+    CSV_FILE.writerow(['Class Code', 'Class Name'])
+    CSV_FILE.writerows(TECH_CODES)</code></pre>
+
+                    <h2 class="sectionhead">Creating Visualizations</h2>
+                    <p>Now that we have our data in a clean, normalized format, let's make the visualization! We use Tableau Public, an interactive visualization platform that can publish to a public profile. Once it's published, you'll be able to browse and interact with your visualization on your Tableau Public profile web site, as well as embed that visualization in other web pages. First, install Tableau Public. Tableau requires an email to obtain the app. Once that's done, sign up for a free Tableau Public profile. Now let's load up Tableau Public.</p>
+
+                    <p>Below we show how to create the embedded visualizations with Tableau Public. We highlight points of interest in <span style="color: #feb2a8">red</span> for clarity.</p>
+
+                    <h2 class="subsection">Connecting to our CSV</h2>
+                    <img src="img/tableau-public-connect-screen.png" style="width: 100%">
+
+                    <p>First, we need to connect to our data. <span style='color:#feb2a8'>Select 'Text File' on the left side of the screen</span>, under 'Connect.' In the dialog box that opens, navigate to state_tech.csv file we just created and click Open.</p>
+
+                    <h2 class="subsection">Data Joining</h2>
+                    <img src="img/data-screen-1.png" style="width: 100%">
+
+                    <p>Here, we see that Tableau has linked to the state_tech.csv file we generated. Our data sources for this visualization will be our state_tech.csv file joined to our tech_code.csv file (to supply the name for the technology class). On the left, Tableau lists available text files in the current working directory, and on the top, Tableau shows which sources are currently driving the visualization. So first, we need to join our state_tech.csv file onto our tech_code.csv file. Drag the tech_code.csv entry from the left section (under 'Files') onto the top section. Tableau's Join dialog pops up:</p>
+
+                    <img src="img/data-screen-join.png" style="width: 100%">
+
+                    <p>In this case, <span style="color:#feb2a8">we want a Left Join</span>, using the 'Tech Class Code' field in state_tech.csv and the 'Class Code' field in tech_code.csv. At first, this won't work. Tableau supports some extract and load functionality, and will try to infer the data types of the loaded columns. In this case, Tableau infers that the 'Class Code' field in tech_code.csv is a text field, whereas the 'Tech Class Code' is a numeric field, which prevents our Join. In fact, there's multiple changes we need to make. First, Tableau supports many Geographical data types, so <span style="color:#feb2a8">we'll want to change Region to Geographic Role -> State/Province</span>. Next, <span style="color:#feb2a8">change the data type of 'Tech Class Code' to String</span>. (NOTE: To change data types, click the symbol above a given column header (such as 'Abc' or '#')). Once the data types are consistent, the join should work. Click the 'Automatically Update' button to see the joined data.</p>
+
+                    <img src="img/data-screen-join-fix.png" style="width: 100%">
+                    
+                    <p>Looking good! Just one more fix: We currently have two columns for class code, but we only need one. Let's hide the first one (the second column): <span style="color:#feb2a8">mouseover the column header and click the arrow in the upper right corner of the header</span>, then select Hide.</p>                  
+
+                    <img src="img/data-screen-final.png" style="width: 100%">
+
+                    <p>With that done, let's start putting together our visualization. <span style="color:#feb2a8">Select the orange button at the bottom of the page for Sheet 1</span>. This brings us to the worksheet view for Sheet 1. Tableau uses worksheets to represent a single component of a dashboard, which may include many worksheets. For the purposes of this tutorial, we're treating 'dashboard' as synonymous with 'visualization.'</p> 
+
+                    <img src="img/sheet1-1.png" style="width: 100%">
+
+                    <p>First things first, let's <span style='color:#feb2a8'>rename 'Sheet 1' to 'treemap'</span>. Our visualization will consist of this worksheet as well as an additional worksheet for the bar graph. Now let's take a look at the screen. On the left side, we find our column names (as well as some extra fields in italics, which for the purposes of this tutorial we can ignore) organized into two different categories: Dimensions and Measures. Put simply, a dimension is a field that identifies a piece of data, whereas a measure is a field that tells us, quantitatively, something about that data. So, 'Region Name' identifies a row of data as referring to a given region (such as Alabama), whereas 'Utility Patent Count' gives us a quantitative value for that row of data. Tableau will attempt to infer which fields are dimensions and which are measures, but sometimes it requires some adjusting. In this case, Tableau correctly identifies the 'Region', 'Year', 'Class Code' and 'Class Name' as dimensions, and 'Utility Patent Count' as our only measure. That is, 'Region', 'Year', 'Class Code' and 'Class Name' identify the scope of a particular row of data (or, in the case of Class Name, provide additional data on another dimension), and 'Utility Patent Count' represents a value for that scope.</p>
+
+                    <img src="img/sheet1-2.png" style="width: 100%">
+
+                    <p>But we want a treemap, not a bar graph. The answer is the Show Me menu on the right. Tableau supports switching between multiple different styles of graph with a single click, as long as the number of dimensions and measures involved are compatible. In the Show Me menu, <span style='color:#feb2a8'>click the TreeMap square</span> (fourth from the top, on the left).</p>
+
+                    <img src="img/sheet1-3.png" style="width: 100%">
+
+                    <p>Presto! Tableau moved the Utility Patent Count and Class Name pills from the Columns and Rows rows at the top to the left under Marks. In this case, we could have built the treemap by configuring these items ourselves, but the Show Me menu offers a convenient shortcut.</p>
+
+                    <p>One last thing: Tableau creates a default tooltip using the measures and dimensions involved in the worksheet, but we want to show two additional data items: The class code and the ratio of the patents for a technology class for the total. First, <span style='color:#feb2a8'>drag the Class Code pill onto the Tooltip square</span> (in the Marks section). Mouseover a square in the treemap and observe that the class code was added. Next, <span style='color:#feb2a8'>right-click the first Utility Patent Counts pill in the Marks section (with two colorless squares to its right) and select Quick Table Calculation -> Percent of Total</span>. The tooltip now includes the class code and percent of total for a given square. To re-order the tooltip rows to match the original visualization, click the Tooltip square in the Marks section and adjust manually.</p>
+
+                    <img src="img/sheet1-4.png" style="width: 100%">
+
+                    <p>Now let's get started on the line graph. <span style='color:#feb2a8'>Click the button directly to the right of the treemap tab on the bottom</span> of the page to create a new worksheet and rename it 'line.'</p>
+
+                    <img src="img/sheet2-1.png" style="width: 100%">
+
+                    <p>For this graph, <span style='color:#feb2a8'>drag Year to Columns and Utility Patent Count to Rows</span>. Finally, right-click the row header on the right of the graph (labeled 'Utility Patent Count'), select 'Add Reference Line' and press OK. By default, this creates a reference line based on the Average of the Utility Patent Count measure, aggregated by sum for a given year. To have the line appear dashed instead of solid, we can right-click the reference line itself and select 'Format.' This opens the Format menu for the reference line on the left side of the screen. Open the 'Line' dropdown and select the dashed line. Finally, deselect the reference line by clicking an empty space within the line graph. Your graph should look like this:</p>
+
+                    <img src="img/sheet2-2.png" style="width: 100%">
+
+                    <p>Now we can start putting these components together into a complete visualization. <span style='color:#feb2a8'>Click the second button to the right of the line tab</span> at the bottom of the page to create a new dashboard, and rename it 'main.'</p>
+
+                    <img src="img/main-dash1.png" style="width: 100%">
+
+                    <p>On the top left, we see a Dashboard section, with a row for each worksheet we created. In the middle is the dashboard pane. <span style='color:#feb2a8'>Drag the treemap row onto the pane, then drag the line row below the treemap sheet</span>. As you drag a component onto the pane, a gray box will show you how it will be oriented. You want the gray box to be below the treemap component, not to either side. Your dashboard should look like this:</p>
+
+                    <img src="img/main-dash2.png" style="width: 100%">
+
+                    <p>Looks good, but we're not done yet! We want to allow the user to filter based both on State and Year, but we're currently showing aggregations for all values, regardless of State and Year. To accomplish this, let's <span style='color:#feb2a8'>return to the treemap worksheet</span>. First, let's create the Year filter. <span style='color:#feb2a8'>Right-click the Year row in the Dimensions section and select 'Show Filter'</span>. Tableau adds a filter control that defaults to the full range of years. If we wanted our dashboard to default to a particular range of years on load, or to exclude certain values in the final product, we can set these bounds to anything we like. Let's leave it at the default.</p>
+
+                    <img src="img/main-dash3.png" style="width: 100%">
+
+                    <p>Right now, this filter only applies to the treemap worksheet. To apply it to the line graph as well, <span style='color:#feb2a8'>click the arrow in the upper-right section of the new Year filter control and select Apply to Worksheets -> All Using This Data Source</span>. If you return to the dashboard, you'll find that the filter doesn't show up yet. The simplest way to refresh the dashboard is to drag the treemap component off the pane (removing it from the dashboard), then re-add it to the top of the dashboard. The Year Filter will then pop up. Drag it around a bit and confirm that it affects both the treemap and the line graph.</p>
+
+                    <img src="img/main-dash4.png" style="width: 100%">
+
+                    <p>Now for the Region filter. Return to the treemap worksheet, <span style='color:#feb2a8'>right-click on Region and select Show Filter</span>. By default, Tableau creates a multi-checkbox filter. Let's adjust the Region filter component: <span style='color:#feb2a8'>click the arrow in the upper-right of the Region filter and select 'Single Value Dropdown'</span>. Now we can select a region and see the technology class breakdown for that particular region, or select the '(All)' value in the dropdown to clear out the Region filter. For now, let's set the default to '(All).' And, as before, we need to tell Tableau that we want this filter to apply to other worksheets using the same data source: click the arrow in the upper right of the Region filter and select Apply to Worksheets -> All Using This Data Source.</p>
+
+                    <img src="img/main-dash3.png" style="width: 100%">
+
+                    <p>Now let's go back to the main dashboard and refresh the treemap component by dragging it off the dashboard pane then dragging it back on. <span style='color:#feb2a8'>Drag the year slider around and set the Region filter to other values to confirm that it all works</span>.</p>
+
+                    <img src="img/main-dash5.png" style="width: 100%">
+
+                    <p>Looking great! There are some additional tweaks we could make, such as resizing the dashboard using the Dashboard section in the lower-left of the page, and either hiding or renaming the worksheet titles to something more meaningful than 'treemap' and 'line,' but making these changes is straightforward. When you're ready, select File -> Save to Tableau Public to start the publication process to the Tableau Public profile you created earlier. You'll receive a log-in prompt for Tableau Public, then an opportunity to rename your workbook. Once saved, Tableau Public will open in your browser, and you'll find the result of your hard work! Your visualization will be publicly available at this point. If you want to share your visualization with other people, either with a direct link or embedded into your own web page, check out the Share button on the bottom-right of the visualization.</p>
+
+                    <h2 class="subsection">Exploratory Visualization</h2>
+                    <p>Now let's create the exploratory viz we showed earlier, which allowed us to compare states by technology class. We'll use the same data that we pulled for the previous viz, so there's no need to write any more code. First, let's start up a new instance of Tableau Public (or select File -> New). Follow the join steps for the previous visualization, joining state_tech.csv to tech_code.csv. No additional data steps are needed. Once that's done, create a new worksheet and rename it to 'bar'.</p>
+
+                    <img src="img/main2-dash1.PNG" style="width: 100%">
+
+                    <p>For this vis, we want to display all regions for a selected technology class, sorted in descending order by patent count. First, drag Region to Columns and Utility Patent Count to Rows. This will create an unsorted bar graph, summing all patent counts across all technology classes. To sort the graph, mouseover the column header on the left and click the sort icon above the header text. This will, by default, sort the bars in descending order. Next, we want to allow the user to select a USPC class to see the results for that class. We could drag either Class Code or Class name to the Filters column, then Show Filter. However, the Class Name field doesn't include the Class Code, and the Class Code field is unreadable (unless you have the USPC codes memorized!). What we want is a combined field. To create this, right-click the Dimensions tab and select Create Calculated Field and name it 'Combined Class Name'. Then, insert the following text:</p>
+
+                    <img src="img/main2-dash2.PNG" style="width: 100%">
+
+                    <p>This will combine the class name and class code into a single field. Now drag Combined Class Name to Filters. In the Filter dialog that pops up, select the 'Use All' radio button and click Apply. Next, right-click the Combined Class Name pill in the Filters dialog and click 'Show Filter.' Then, click the arrow icon in the top-right of the filter tab (the multiple checkbox list on the right) and change the checkbox list to a single-value dropdown. Finally, let's add a Year filter. Drag the Year pill from the Dimensions tab to Filters, right-click the pill in Filters and select 'Show Filter' and press OK.</p>
+
+                    <img src="img/main2-dash3.PNG" style="width: 100%">
+
+                    <p>And that's it! With just a few drag and drops, and a bit of configuring, we have a simple state comparison graph for any given technology class. We could use this viz as-is to explore a given technology class for any unusual state dominance (hinting toward further analysis), or we could expand it further (perhaps with a ratio in the tooltip of the state's share of the total patents the selected class). Also, because we combined the Class Name and Class Code into Combined Class Name, we can search a given USPC code within the filter in case we know which class we want by its code. Tableau makes it easy to dynamically explore data by way of visualization creation, and then share the results with others.</p>
+
+                    <p>If you liked this tutorial and would like to see more visualizations using USPTO data and Tableau Public, please visit the USPTO Developer Portal. We'd love to hear from you and see what you've created!</p>
+                </section>
+                
+                </div><!-- Content -->
+                  
+                <div id='sidebar' class="hidden-xs hidden-sm col-lg-2 col-md-2"><!-- Sidebar -->
+                       
+                    <ul id='featured-nav' class="nav nav-list featured-nav nav-stacked">
+                      
+                        
+                        <li>
+                            <ul class="fa-style"><!-- Font Awesome -->
+                               <!-- <li><a href="https://github.com/CommerceDataService/tutorial_ms_powerbi"><i class="fa fa-file-archive-o fa-lg"></i></a></li>
+                                <li><a href="https://github.com/CommerceDataService/tutorial_ms_powerbi"><i class="fa fa-file-code-o fa-lg"></i></a></li>
+                                <li><a href="https://github.com/CommerceDataService/tutorial_ms_powerbi"><i class="fa fa-github-square fa-lg"></i></a></li>-->
+                            </ul>
+                        </li>
+                        <li>
+                            
+                        </li>
+                        <li>
+                            <ul class="fa-style"><!-- Font Awesome -->
+                                <!--<li><a href="https://github.com/CommerceDataService/tutorial_ms_powerbi"><i class="fa fa-file-archive-o fa-lg"></i></a></li>
+                                <li><a href="https://github.com/CommerceDataService/tutorial_ms_powerbi"><i class="fa fa-file-code-o fa-lg"></i></a></li>
+                                <li><a href="https://github.com/CommerceDataService/tutorial_ms_powerbi" title="Github Repo for MS Power BI Part 1"><i class="fa fa-github-square fa-lg"></i></a></li>-->
+                            </ul>
+                        </li>
+                        <li>
+                            <ul class="fa-style"><!-- Font Awesome -->
+                                <li><a href="https://github.com/CommerceDataService/tutorial_pto" title="Github Repo for MS Power BI Part 1"><i class="fa fa-github-square fa-lg"></i></a></li>
+                                <li><a href="tutorial_pto.ipynb"  title="Jupyter notebook of Code"><i class="fa fa-file-code-o fa-lg"></i></a></li>
+                                <li><a href="https://twitter.com/uspto" title="Twitter handle for USPTO"><i class="fa fa-twitter-square fa-lg"></i></a></li><!-- Haven't added the SNS components -->
+                                <!--<li><a href=""><i class="fa fa-linkedin-square fa-lg"></i></a></li>
+                                <li><a href=""><i class="fa fa-facebook-square fa-lg"></i></a></li>-->
+                            </ul>
+                        </li>
+                        <li><a href="#intro">FOREWORD</a></li>
+                        <li><a href="#state">TECHNOLOGY CLASSES BY STATE</a></li>
+                        <li><a href="#case">CASE EXAMPLE: IDAHO</a></li>
+                        <li><a href="#analysis">ON THE FLY ANALYSIS</a></li>
+                        <li><a href="#conclusion">CONCLUSION</a></li>
+                        <li><a href="#start">GETTING STARTED</a></li>
+                        
+                    </ul>
+                </div><!-- Sidebar -->
+            </div><!-- Row -->
+        </div><!-- Container-fluid -->
     </div>
-
-    <div class="container-fluid main-container">
-        <p style="font-family:Helvetica;"><span style="font-size:150%;color:#004C97;"><strong>What does innovation look like in a given state?</strong></span>
-        <br> Once you've lived in a state for a few years, you may already have some sense of what the innovation in that state looks like. For California, it's technology. For Alaska, you might (correctly) guess it has to do with drilling on the North Slope. But if you live in a state that isn't so dominated by a major corporation or industry, it might be much less obvious what kind of innovation is happening around you. Among the data the <a href='http://www.uspto.gov/'>United States Patent and Trademark Office (USPTO)</a> provides, the <a href='http://www.uspto.gov/learning-and-resources/electronic-data-products/patent-technology-monitoring-team-ptmt-patent'>Patent Trademark Monitoring Team (PTMT)</a> produces aggregations of the underlying patent data, along many different dimensions and partitions. These aggregations answer all kinds of questions just like this, as well as offering a convenient input for data visualizations.
-        </p>
-        <br><span style="font-size:150%;color:#004C97;">Technology classes by state</span><br>
-        <p>The visualization below serves as a detail view of the technology classes that make up a state's utility patents. The treemap organizes all of a state's technology classes for a given timeframe, with a rectangle's size representing its share of the patent total, while the line graph depicts the per year values for a given technology class if a rectangle is hovered over, and all classes for the state otherwise. We can pick which state we're looking at by using the dropdownbox on the right.</p> 
-    </div>
-
-<div style="background-color:#004C97;">
-    <div class="container-fluid main-container">
-        <script type='text/javascript' src='http://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1004px; height: 869px;'><noscript><a href='#'><img alt='main ' src='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;state-tech-class-treemap&#47;main&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1004' height='869' style='display:none;'><param name='host_url' value='http%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='state-tech-class-treemap&#47;main' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='http:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;st&#47;state-tech-class-treemap&#47;main&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
-    </div>
-</div>
-<br>
-
-<div class="container-fluid main-container" style="background-color:white;">
-        <p style="font-family:Helvetica;">
-            <br><span style="font-size:150%;color:#004C97;">Case example: Idaho</span><br>
-            Let’s take a look at Idaho. As some background, Idaho is a big patent producer, driven primarily by Micron Technology, Inc. So, we see that Idaho's largest technology classes for 1995 - 2014 are:
-            <ul>
-                <li>'Semiconductor Device Manufacturing: Process' (with 21.99%),</li>
-                <li>'Active Solid-State Devices (e.g., Transistors, Solid-State Diodes)' (with 13.95%)</li>
-                <li>'Static Information Storage and Retrieval' (with 9.99%)</li>
-            </ul>
-        </p>
-            <p>Unsurprisingly, given that the large share of Idaho's patent production is through Micron (a technology company), the largest technology classes involve computers. Vermont has a similar breakdown of technology classes, by way of IBM.</p>
-            <p>Other states are similarly dominated by a particular technology class (or kind of technology classes). Michigan's largest technology class since 2008, for example, is 'DP: Vehicles, Navigation, and Relative Location (Data Processing)' (technology class 701). Given Michigan's traditional status as the locus of the USA's auto-making industry, looking at the last 20 years (1995-2014), we can see that the second largest technology class is technically Internal-Combustion Engines (technology class 123), but this class stays relatively constant year-over-year, while technology class 701 increases significantly, starting in 2008, corresponding with the automotive industry bailout. This may point to a new, deliberate R&D focus in the industry following the injection of funds. Gas prices drove many consumers to purchase more fuel-efficient vehicles, such as Japanese-made models. Perhaps the US automotive industry decided to differentiate their competitive offerings using services based on GPS, rather than trying to play catch-up with fuel efficiency.</p>
-            <p>These detail views not only give us a good sense of what industry in a particular state looks like (Oklahoma's largest technology class, for example, is 'Wells (shafts or deep borings in the earth, e.g., for oil and gas)'), but can also help us understand trends within an industry if that industry is very specifically associated with a particular state. The automotive industry in Michigan is one of the clearest examples, but perhaps we could do a similar (though necessarily more subtle) analysis of Silicon Valley. California is not dominated by a single technology class, but many of their top technology classes are computer-oriented. Which technology classes are rising, and which are falling?</p>
-        </p>
-</div>
-
-<div style="background-color:#004C97;">
-    <div class="container-fluid main-container"><script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 982px; height: 742px;'><noscript><a href='#'><img alt='bar ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ex&#47;ExploratoryViz&#47;bar&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='982' height='742' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='ExploratoryViz&#47;bar' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ex&#47;ExploratoryViz&#47;bar&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
-    </div>
-</div>
-
-<div class="container-fluid main-container" style="background-color:white;">
-        <p style="font-family:Helvetica;">
-            <br><span style="font-size:150%;color:#004C97;">On the fly analysis</span><br>
-            Designing data visualizations can sometimes be rather easy. If you're answering a specific question about inherently important data (such as sales and profit figures for a company you work for), any functional visualization of that data will be more or less successful. You can plan out the visualization from the beginning and develop by that blueprint. If you're instead digging into data to discover patterns or trends, you won't really know what the pattern looks like until you find it, and any upfront design may be a waste of time. With drag-and-drop tools, Tableau makes developing visualizations quick and easy. In this way, you can use Tableau as a tool for exploring your data dynamically, restructuring bar graphs into line graphs and bringing in new data points in a single mouse stroke. The above visualization, which leverages the exact same data from the prior state details visualization, was created in a few leisurely minutes.
-
-            <p>This simple vis offers a detail view for a given technology class instead of a given state, offering us a comparative view of states by USPC class. We can now see, for example, that California consistently dominates the Locks USPC class (070) across all time ranges, whereas Illinois and New York are the top historical contributors to Printing (101), though California catches up for the range 2005-2014. What does the history of innovation in printing look like? Why is Illinois so significant, and why is California so dominant today? Why is New Hampshire a strong second over the last ten years, when it barely featured from 1963-1972? These kinds of questions lead to discovery. If we can identify the right way to peer into our data, and the right variables to make configurable, we can use Tableau as an elegant query system that shows these changes quickly and clearly, and lets us focus on the Why behind the What.<p>
-        </p>
-</div>
-
-<div class="container-fluid main-container" >
-<br>
-    <p style="font-family:Helvetica;"><span style="font-size:150%;color:#004C97;">Conclusion</span>
-        <br>We've shown here two visualization possibilities for a single set of data. Not only are there many more possibilities for this data set (such as a focused view on a specific technology class or state), but many more aggregations available at the PTMT data site, and that many more possibilities for joining USPTO data to other data sources. We could use Census population estimates by year to calculate patents per capita. We could pull in yearly state GDP data and see how it correlates with patent totals. We could observe the patent totals for a given corporation against its economic measures (such as revenue or earnings per share). To lightly spin the old cliché, the possibilities are infinite, and Python, Beautiful Soup and Tableau make the creation process painless.
-    </p>
-</div>     
-
-</div>
-
-
-
-<!--Do more-->
-<div id='code' style="color:black;font-family:Helvetica;" >
-    <div class="container-fluid main-container">
-    <p style="font-family:Helvetica"><span style="font-size:200%;color:#004C97;"><br><strong>Getting Started</strong></span>
-        <br>In this tutorial, we'll go over how to collate the required data from the PTMT web site using Python web scraping, then walk through creating the visualization in Tableau Public. Follow along in the Jupyter Notebook below or check out the code files at <a href="https://github.com/CommerceDataService/tutorial_pto">Github</a>. 
-        <br><br>
-        <a href="./tutorial_pto.ipynb">Download Jupyter Notebook Version</a>
-    </p>
-    </div>
-</div>
-
-<div>
-<iframe src="tutorial_pto.html" marginwidth="0" frameborder = "0"  marginheight="0" scrolling="no" width="100%" height="100%" onload="resizeIframe(this)"></iframe>
-</div>
-
-<script language="javascript" type="text/javascript">
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
-  }
-</script>
-
 
 </body>
 </html>
