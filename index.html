@@ -339,7 +339,7 @@ with open('./tech_code.csv', 'w', newline='') as out:
 
                     <p>One last thing: Tableau creates a default tooltip using the measures and dimensions involved in the worksheet, but we want to show two additional data items: The class code and the ratio of the patents for a technology class for the total. First, <span style='color:#feb2a8'>drag the Class Code pill onto the Tooltip square</span> (in the Marks section). Mouseover a square in the treemap and observe that the class code was added. Next, <span style='color:#feb2a8'>right-click the first Utility Patent Counts pill in the Marks section (with two colorless squares to its right) and select Quick Table Calculation -> Percent of Total</span>. The tooltip now includes the class code and percent of total for a given square. To re-order the tooltip rows to match the original visualization, click the Tooltip square in the Marks section and adjust manually.</p>
 
-                    <img src="img/sheet1-4.PNG" style="width: 100%">
+                    <img src="img/sheet1-4.png" style="width: 100%">
 
                     <p>Now let's get started on the line graph. <span style='color:#feb2a8'>Click the button directly to the right of the treemap tab on the bottom</span> of the page to create a new worksheet and rename it 'line.'</p>
 
@@ -382,7 +382,7 @@ with open('./tech_code.csv', 'w', newline='') as out:
 
                     <p>For this vis, we want to display all regions for a selected technology class, sorted in descending order by patent count. First, drag Region to Columns and Utility Patent Count to Rows. This will create an unsorted bar graph, summing all patent counts across all technology classes. To sort the graph, mouseover the column header on the left and click the sort icon above the header text. This will, by default, sort the bars in descending order. Next, we want to allow the user to select a USPC class to see the results for that class. We could drag either Class Code or Class name to the Filters column, then Show Filter. However, the Class Name field doesn't include the Class Code, and the Class Code field is unreadable (unless you have the USPC codes memorized!). What we want is a combined field. To create this, right-click the Dimensions tab and select Create Calculated Field and name it 'Combined Class Name'. Then, insert the following text:</p>
 
-                    <img src="img/main2-dash2.PNG" style="width: 100%">
+                    <img src="img/main2-dash2.png" style="width: 100%">
 
                     <p>This will combine the class name and class code into a single field. Now drag Combined Class Name to Filters. In the Filter dialog that pops up, select the 'Use All' radio button and click Apply. Next, right-click the Combined Class Name pill in the Filters dialog and click 'Show Filter.' Then, click the arrow icon in the top-right of the filter tab (the multiple checkbox list on the right) and change the checkbox list to a single-value dropdown. Finally, let's add a Year filter. Drag the Year pill from the Dimensions tab to Filters, right-click the pill in Filters and select 'Show Filter' and press OK.</p>
 
